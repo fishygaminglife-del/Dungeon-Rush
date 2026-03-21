@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://baknxwctpu30g"]
+
+[ext_resource type="PackedScene" uid="uid://bshkwutv8p8hv" path="res://models/props/plate_food.glb" id="1_2gman"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mm8ao"]
+height = 1.0
+
+[node name="StaticBody3D" type="StaticBody3D" unique_id=1136506007]
+
+[node name="plate_food" parent="." unique_id=937785089 instance=ExtResource("1_2gman")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0, 0.2)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=529696592]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0.29999995, 0.2)
+shape = SubResource("CapsuleShape3D_mm8ao")

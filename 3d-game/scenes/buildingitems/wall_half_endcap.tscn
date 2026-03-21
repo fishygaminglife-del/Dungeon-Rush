@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bw6nq82qyunb5"]
+
+[ext_resource type="PackedScene" uid="uid://b4dm16lxyw8pd" path="res://models/building/wall_half_endcap.glb" id="1_5qi5k"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g8cp7"]
+size = Vector3(2, 0.5, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3yud3"]
+size = Vector3(2, 0.8, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0ibuu"]
+size = Vector3(1.7, 2.7, 0.6)
+
+[node name="StaticBody3D" type="StaticBody3D" unique_id=1885115854]
+
+[node name="wall_half_endcap2" parent="." unique_id=448570501 instance=ExtResource("1_5qi5k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1999998, -0.2, -0.2)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=650505964]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1999998, 0.050000012, -0.2)
+shape = SubResource("BoxShape3D_g8cp7")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=119360014]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1999998, 3.3999999, -0.2)
+shape = SubResource("BoxShape3D_3yud3")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=859599449]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0499997, 1.6499999, -0.19999999)
+shape = SubResource("BoxShape3D_0ibuu")

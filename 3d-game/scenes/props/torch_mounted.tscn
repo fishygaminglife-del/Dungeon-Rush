@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b3dte1kd7whik"]
+
+[ext_resource type="PackedScene" uid="uid://1vca0k0llml4" path="res://models/props/torch_mounted.glb" id="1_rpe6c"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lyji0"]
+radius = 0.3
+height = 1.1
+
+[node name="StaticBody3D" type="StaticBody3D" unique_id=1267042868]
+
+[node name="torch_mounted2" parent="." unique_id=56119308 instance=ExtResource("1_rpe6c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.099999964, -0.39999998, -0.70000005)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1666626877]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, -0.25, -0.4)
+shape = SubResource("CapsuleShape3D_lyji0")
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1429020767]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09999976, 0.19999993, -0.39999983)
+light_color = Color(0.7921569, 0.4392157, 0.20392157, 1)
+light_energy = 2.0
+omni_range = 15.0

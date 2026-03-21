@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://clkie7aseo5a6"]
+
+[ext_resource type="PackedScene" uid="uid://dgvu3jfogf86j" path="res://models/props/candles.glb" id="1_wek3q"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v6jeq"]
+radius = 0.3
+height = 0.95000005
+
+[node name="StaticBody3D" type="StaticBody3D" unique_id=232504560]
+
+[node name="candles" parent="." unique_id=482066544 instance=ExtResource("1_wek3q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1888600122]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.375, 0)
+shape = SubResource("CapsuleShape3D_v6jeq")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1115945137]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10582554, 0.7384618, -0.00033969432)
+light_color = Color(1, 0.54901963, 0, 1)
+light_energy = 4.0
+omni_range = 0.297
+omni_attenuation = 1.24
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1488124381]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.097593784, 0.6785418, 0.1380054)
+light_color = Color(1, 0.54901963, 0, 1)
+light_energy = 4.0
+omni_range = 0.297
+omni_attenuation = 1.24
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="." unique_id=1874264469]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14026403, 0.88986135, -0.039995313)
+light_color = Color(1, 0.54901963, 0, 1)
+light_energy = 8.0
+omni_range = 1.0
+omni_attenuation = 1.24

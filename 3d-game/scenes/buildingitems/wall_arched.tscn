@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bokb54lox8ffw"]
+
+[ext_resource type="PackedScene" uid="uid://bcmwmgf8asoib" path="res://models/building/wall_arched.glb" id="1_ktiha"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dnjof"]
+size = Vector3(4, 0.5, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vxv2b"]
+size = Vector3(4, 0.8, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_skyu8"]
+size = Vector3(3.8, 2.7, 0.6)
+
+[node name="StaticBody3D" type="StaticBody3D" unique_id=418742140]
+
+[node name="wall_arched2" parent="." unique_id=1696473905 instance=ExtResource("1_ktiha")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1213859450]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.099999726, 0.050000012, -0.1)
+shape = SubResource("BoxShape3D_dnjof")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1418304145]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.099999726, 3.3999999, -0.1)
+shape = SubResource("BoxShape3D_vxv2b")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=1257098607]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09999961, 1.6499999, -0.099999994)
+shape = SubResource("BoxShape3D_skyu8")
