@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dbnc41v77aham"]
 
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://cu77cud5juqgq" path="res://scripts/main.gd" id="1_y6deb"]
 [ext_resource type="PackedScene" uid="uid://cqcor0i6yrvn0" path="res://scenes/buildingitems/wall_corner.tscn" id="2_sugp2"]
 [ext_resource type="PackedScene" uid="uid://yesq07d6hu0o" path="res://scenes/buildingitems/wall.tscn" id="3_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://bw6nq82qyunb5" path="res://scenes/buildingitems/wall_half_endcap.tscn" id="4_tbgi4"]
@@ -21,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://baknxwctpu30g" path="res://scenes/props/plate_food.tscn" id="20_2wyq8"]
 [ext_resource type="PackedScene" uid="uid://6fjc7hiq5m1f" path="res://scenes/props/crates_stacked.tscn" id="21_vxglm"]
 [ext_resource type="PackedScene" uid="uid://clkie7aseo5a6" path="res://scenes/props/candles.tscn" id="22_2f3dj"]
+[ext_resource type="Texture2D" uid="uid://dxpxnrk0bchbm" path="res://images/Textbox.png" id="24_og1vs"]
 [ext_resource type="PackedScene" uid="uid://bknfkwu72pegf" path="res://scenes/buildingitems/walll_window_closed.tscn" id="25_og1vs"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_j8jky"]
@@ -34,7 +36,194 @@ sky = SubResource("Sky_kmb1v")
 tonemap_mode = 2
 ssao_enabled = true
 
+[sub_resource type="Animation" id="Animation_2wyq8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Textbox:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/Name:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/Text:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimationPlayer/Text:visible_ratio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimationPlayer/Name:visible_ratio")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_vxglm"]
+resource_name = "text_play"
+length = 3.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Textbox:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/Name:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/Text:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimationPlayer/Text:visible_ratio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_2f3dj"]
+resource_name = "textplay"
+length = 3.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Textbox:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/Name:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/Text:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimationPlayer/Text:visible_ratio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimationPlayer/Name:visible_ratio")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yq6so"]
+_data = {
+&"RESET": SubResource("Animation_2wyq8"),
+&"text_play": SubResource("Animation_vxglm"),
+&"textplay": SubResource("Animation_2f3dj")
+}
+
 [node name="Node3D" type="Node3D" unique_id=440233230]
+script = ExtResource("1_y6deb")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1498148190]
 transform = Transform3D(-0.2714498, -0.64781255, 0.7117963, 0.047863908, 0.7295636, 0.682236, -0.9612617, 0.21926217, -0.16703306, 22.4, 17.800001, -9.7)
@@ -664,3 +853,35 @@ light_energy = 16.0
 spot_range = 12.723
 spot_attenuation = 0.49
 spot_angle = 17.79
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=520797454]
+libraries/ = SubResource("AnimationLibrary_yq6so")
+
+[node name="Textbox" type="Sprite2D" parent="AnimationPlayer" unique_id=371889479]
+position = Vector2(588, 519.00006)
+scale = Vector2(1.6513678, 1.6513673)
+texture = ExtResource("24_og1vs")
+
+[node name="Name" type="Label" parent="AnimationPlayer" unique_id=121959624]
+offset_left = 388.0
+offset_top = 445.0
+offset_right = 533.0
+offset_bottom = 499.0
+theme_override_font_sizes/font_size = 24
+text = "Instructions"
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Text" type="Label" parent="AnimationPlayer" unique_id=646438603]
+offset_left = 392.0
+offset_top = 504.0
+offset_right = 785.0
+offset_bottom = 588.0
+theme_override_font_sizes/font_size = 16
+text = "Hello Friend"
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
