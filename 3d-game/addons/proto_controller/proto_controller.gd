@@ -16,8 +16,7 @@ extends CharacterBody3D
 ## Can we press to enter freefly mode (noclip)?
 @export var can_freefly : bool = false
 
-@export_group("Speeds")
-## Look around rotation speed.
+@export_group("Speeds")## Look around rotation speed.
 @export var look_speed : float = 0.005
 ## Normal speed.
 @export var base_speed : float = 7.0
@@ -118,7 +117,11 @@ func _physics_process(delta: float) -> void:
 	# Use velocity to actually move
 	move_and_slide()
 
-
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		if collision.get_collider() is RigidBody3D:
+			collision.get_collider().apply_central_impulse(-collision.get_normal() * 5)
+		
 ## Rotate us to look around.
 ## Base of controller rotates around y (left/right). Head rotates around x (up/down).
 ## Modifies look_rotation based on rot_input, then resets basis and rotates by look_rotation.
