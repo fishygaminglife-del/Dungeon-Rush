@@ -1,7 +1,5 @@
 # ProtoController v1.0 by Brackeys
 # CC0 License
-# Intended for rapid prototyping of first-person games.
-# Happy prototyping!
 
 extends CharacterBody3D
 
@@ -120,7 +118,7 @@ func _physics_process(delta: float) -> void:
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
 		if collision.get_collider() is RigidBody3D:
-			collision.get_collider().apply_central_impulse(-collision.get_normal() * 5)
+			collision.get_collider().apply_central_impulse(-collision.get_normal() * 0.65)
 		
 ## Rotate us to look around.
 ## Base of controller rotates around y (left/right). Head rotates around x (up/down).

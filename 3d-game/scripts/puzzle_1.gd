@@ -35,13 +35,16 @@ func _input(event):
 	if event.is_action_pressed("interact") and Global.keypad == true:
 		$KeyPadZoom.visible = true
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	elif event.is_action_pressed("interact") and Global.keypad == true:
+		$"../TextPlayer/Textbox".visible = false
+		$"../TextPlayer/Name".visible = false
+		$"../TextPlayer/Text".visible = false
+	elif event.is_action_pressed("interact") and Global.keypad == false:
 		$KeyPadZoom.visible = false
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		
 func _on_panel_1_body_entered(body: Node3D) -> void:
-		Global.keypad = true
-		$CODEE.visible = true
+	Global.keypad = true
+	$CODEE.visible = true
 func _on_panel_1_body_exited(body: Node3D) -> void:
 	Global.keypad = false
 	$CODEE.visible = false	
@@ -54,11 +57,11 @@ func add_number(num):
 func check_code():   
 	if "".join(code_input.map(str)) == correct_code:
 		$"../MainScene".play("door_open2")
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		$KeyPadZoom.visible = false
 		Global.keypad = false
 		Global.can_torch = true
 		$CODEE.visible = false
-		
 	else:
 		code_input.clear()
 		$KeyPadZoom/CodeSHow.text =  ""

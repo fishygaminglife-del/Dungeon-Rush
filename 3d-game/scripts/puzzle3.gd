@@ -3,10 +3,10 @@ extends Node3D
 var barrel1 = false
 var barrel2 = false
 var barrel3 = false
+var started = 0
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	pass 
 
 
 
@@ -38,3 +38,14 @@ func _on_area_3d_3_body_exited(body: Node3D) -> void:
 	if body.is_in_group("barrel") or body.is_in_group("player"):
 		barrel3 = false
 		$pressureplate3/MeshInstance3D3.get_surface_override_material(0).albedo_color = Color(1.0, 1.0, 1.0, 1.0)
+
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	if body.is_in_group("player"):
+		if started == 0:
+			started = 1
+			$"../MainScene".play("barrel_enter")
+			$"../TextPlayer/Name".text = "Zombie"
+			$"../TextPlayer/Text".text = "Activate each pressure plate to continue."
+			$"../TextPlayer".play("textplay")
+			await $"../TextPlayer".animation_finished

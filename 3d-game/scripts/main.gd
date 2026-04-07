@@ -41,7 +41,8 @@ func _input(event):
 			$TextPlayer/Name.visible = false
 			$TextPlayer/Text.visible = false
 			$puzzle1/Panel1/CollisionShape3D.disabled = false
-			can_interact = true
+			$NPCTalk/CollisionShape3D.disabled = false
+			can_interact = false
 		if can_interact == true:
 			$TextPlayer/Text.text = "Find the code in this room, and enter it on the code panel to proceed."
 			$TextPlayer.play("text_play")
@@ -61,3 +62,8 @@ func _input(event):
 func _on_npc_talk_body_entered(body: Node3D) -> void:
 	$NPCE.visible = true
 	can_interact = true
+
+
+func _on_npc_talk_body_exited(body: Node3D) -> void:
+	$NPCE.visible = false
+	can_interact = false
