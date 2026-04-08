@@ -55,6 +55,12 @@ func add_number(num):
 			print("correct")
 			$"../MainScene".play("code_correct")
 			await $"../MainScene".animation_finished
+			$"../TextPlayer/Text".text = "Push all the pressure plates down at once (use barrels and you!)"
+			$"../TextPlayer".play("textplay")
+			await get_tree().create_timer(7).timeout
+			$"../TextPlayer/Textbox".visible = false
+			$"../TextPlayer/Name".visible = false
+			$"../TextPlayer/Text".visible = false
 		else:
 			$StaticBody3D/OmniLight3D2.visible = false
 			$StaticBody3D2/OmniLight3D2.visible = false
@@ -116,6 +122,7 @@ func _on_triger_t_4_body_exited(body: Node3D) -> void:
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player") and puz2:
+			Global.key = false
 			puz2 = false
 			$"../TextPlayer/Text".text = "Find the code in this room, and light torches based on number order."
 			$"../TextPlayer".play("text_play")

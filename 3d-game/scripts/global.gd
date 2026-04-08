@@ -2,6 +2,7 @@ extends Node
 
 var keypad = false
 var can_torch = false
+var key = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

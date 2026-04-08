@@ -3,8 +3,9 @@ extends Node3D
 var can_interact = false
 var counts = 0
 
-
 func _ready() -> void:
+	$Building/StaticBody3D534.visible = false
+	$Building/StaticBody3D535.visible = false
 	$puzzle1/CODEE.visible = false
 	$puzzle1/KeyPadZoom.visible = false
 	$puzzle1/Panel1/CollisionShape3D.disabled = true
@@ -43,7 +44,7 @@ func _input(event):
 			$puzzle1/Panel1/CollisionShape3D.disabled = false
 			$NPCTalk/CollisionShape3D.disabled = false
 			can_interact = false
-		if can_interact == true:
+		elif can_interact == true and Global.key:
 			$TextPlayer/Text.text = "Find the code in this room, and enter it on the code panel to proceed."
 			$TextPlayer.play("text_play")
 			await $TextPlayer.animation_finished			
@@ -51,7 +52,7 @@ func _input(event):
 			$TextPlayer/Name.visible = false
 			$TextPlayer/Text.visible = false
 			$puzzle1/Panel1/CollisionShape3D.disabled = false
-		elif Global.can_torch == true:
+		elif Global.can_torch == true and can_interact:
 			$TextPlayer/Text.text = "Find the code in this room, and light torches based on number order."
 			$TextPlayer.play("text_play")
 			await $TextPlayer.animation_finished			
@@ -67,3 +68,19 @@ func _on_npc_talk_body_entered(body: Node3D) -> void:
 func _on_npc_talk_body_exited(body: Node3D) -> void:
 	$NPCE.visible = false
 	can_interact = false
+
+
+func _on_obby_3_darea_body_entered(body: Node3D) -> void:
+	$MainScene.play("obby_reach")
+
+
+func _on_area_3_dend_body_entered(body: Node3D) -> void:
+	$TextPlayer/Text.text = "Wow, you finished the game you can leave (esc) or stay!"
+	$TextPlayer.play("textplay")
+	await $TextPlayer.animation_finished
+	$TextPlayer/Textbox.visible = false
+	$TextPlayer/Name.visible = false
+	$TextPlayer/Text.visible = false
+	$TextPlayer/Text.text = "You beat Dungeon Rush!"
+	$TextPlayer/Name.text = "Dungeon Rush"
+	$TextPlayer.play("textplay")
