@@ -14,7 +14,6 @@ var puz2 = true
 func _ready() -> void:
 	correct_order.shuffle()
 	code_shuffled =  "".join(correct_order.map(str))
-	print(code_shuffled)
 	$CodeWall.text = code_shuffled
 	$StaticBody3D/OmniLight3D2.visible = false
 	$StaticBody3D2/OmniLight3D2.visible = false
@@ -52,7 +51,6 @@ func add_number(num):
 	Global.keypad = false
 	if code_input.size() == 4:
 		if code_input == correct_order:
-			print("correct")
 			$"../MainScene".play("code_correct")
 			await $"../MainScene".animation_finished
 			$"../TextPlayer/Text".text = "Push all the pressure plates down at once (use barrels and you!)"

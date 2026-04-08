@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://dwvnxw101q3ld"]
+
+[ext_resource type="Script" uid="uid://131xr0y1gc43" path="res://scripts/instructions.gd" id="1_c00ax"]
+[ext_resource type="Texture2D" uid="uid://bhk7argiv64qd" path="res://images/Dungeon Rush Cover2.png" id="2_r7su1"]
+[ext_resource type="FontFile" uid="uid://digym3tk41v25" path="res://fonts/Gelasio-VariableFont_wght.ttf" id="3_c6be6"]
+[ext_resource type="Texture2D" uid="uid://l17vhojdmuw4" path="res://images/homebutton.png" id="4_i2hxp"]
+
+[node name="Node2D" type="Node2D" unique_id=2073007129]
+script = ExtResource("1_c00ax")
+
+[node name="DungeonRushCover2" type="Sprite2D" parent="." unique_id=1724047265]
+position = Vector2(576, 324)
+texture = ExtResource("2_r7su1")
+
+[node name="Label" type="Label" parent="." unique_id=1520990811]
+offset_top = 25.0
+offset_right = 1152.0
+offset_bottom = 69.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_c6be6")
+theme_override_font_sizes/font_size = 34
+text = "Instructions"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="." unique_id=1454626521]
+offset_left = 309.0
+offset_top = 257.0
+offset_right = 840.0
+offset_bottom = 301.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_c6be6")
+theme_override_font_sizes/font_size = 25
+text = "Welcome to Dungeon Rush, this is an interactive strategic game. Game controls are WASD or Arrow keys to move, space to jump, mouse to move screen. Press home button, to go to home, press ESC to pause and see menu. Hope you enjoy it!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Homebutton" type="Button" parent="." unique_id=1924348599]
+offset_left = 1089.0
+offset_top = 7.9999995
+offset_right = 1129.0
+offset_bottom = 48.0
+scale = Vector2(1.4, 1.4)
+icon = ExtResource("4_i2hxp")
+
+[connection signal="pressed" from="Homebutton" to="." method="_on_homebutton_pressed"]

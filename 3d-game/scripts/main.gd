@@ -82,5 +82,5 @@ func _on_area_3_dend_body_entered(body: Node3D) -> void:
 	$TextPlayer/Name.visible = false
 	$TextPlayer/Text.visible = false
 	$TextPlayer/Text.text = "You beat Dungeon Rush!"
-	$TextPlayer/Name.text = "Dungeon Rush"
+	$TextPlayer/Name.text = "Zombie"
 	$TextPlayer.play("textplay")

@@ -11,13 +11,18 @@ config_version=5
 [application]
 
 config/name="3d Game"
-run/main_scene="uid://dbnc41v77aham"
+run/main_scene="uid://c5f1aecf83v2y"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Global="*uid://b2078kp2jkqdx"
+
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [editor_plugins]
 
