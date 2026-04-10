@@ -15,7 +15,7 @@ Dungeon Rush is an interactive 3D game made in Godot version 4.6. Being strategi
 - E to interact with objects
   
 ### How To Play 🎮 ###
-- Playable in browser
+- Download .exe
 - Open Itch.IO and search up Fishyyyyyyy_life
 - Click the game "Dungeon Rush"
 - Follow the Instalation Insturctions, press the "Download button", extract the zip file, and run index.exe inside the extracted folder.
