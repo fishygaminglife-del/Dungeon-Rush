@@ -1,3 +1,44 @@
 [gd_scene format=3 uid="uid://dv2keeoce1ywf"]
 
+[ext_resource type="Script" uid="uid://dyedupm4df33q" path="res://scripts/timersystem.gd" id="1_ahhtf"]
+[ext_resource type="AudioStream" uid="uid://1yj0n768gm54" path="res://audio/timerticking.mp3" id="2_oo0fn"]
+
 [node name="CanvasLayer" type="CanvasLayer" unique_id=332630353]
+script = ExtResource("1_ahhtf")
+
+[node name="Timer" type="Timer" parent="." unique_id=2142177920]
+
+[node name="CountDownLabel" type="Label" parent="." unique_id=395744120]
+process_mode = 3
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.5
+offset_top = -49.5
+offset_right = 20.5
+offset_bottom = 49.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 72
+text = "3"
+
+[node name="TimerLabel" type="Label" parent="." unique_id=1832135056]
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -80.0
+offset_top = 15.999999
+offset_right = -40.0
+offset_bottom = 44.0
+grow_horizontal = 0
+scale = Vector2(1.4, 1.4)
+theme_override_font_sizes/font_size = 20
+text = "0.0"
+
+[node name="Tick sound" type="AudioStreamPlayer" parent="." unique_id=280572699]
+stream = ExtResource("2_oo0fn")

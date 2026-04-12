@@ -4,8 +4,8 @@ extends Node3D
 var code_input: Array = []
 var code = int(str(randi_range(1, 9)) + str(randi_range(1, 9)) + str(randi_range(1, 9)))
 var correct_code = str(code)
-var label = randi_range(1, 4)
-
+var label = randi_range(1, 6)
+var labpicked = null
 
 
 func _ready() -> void:
@@ -15,22 +15,55 @@ func _ready() -> void:
 		$Pillar1.visible = false
 		$Chair1.visible = false
 		$Barrel1.visible = false
+		$Wall1.visible = false
+		$Back1.visible = false
+		$Side1.visible = false
+		labpicked = $Wall1
 	elif label == 2:
 		$Pillar1.text = correct_code
-		$Wall1.visible = false
+		$Pillar1.visible = false
 		$Chair1.visible = false
 		$Barrel1.visible = false
+		$Wall1.visible = false
+		$Back1.visible = false
+		$Side1.visible = false
+		labpicked = $Pillar1
 	elif label == 3:
 		$Chair1.text = correct_code
-		$Wall1.visible = false
-		$Pillar1.visible = false
-		$Barrel1.visible = false
-	elif label == 4:
-		$Barrel1.text = correct_code
-		$Wall1.visible = false
 		$Pillar1.visible = false
 		$Chair1.visible = false
-
+		$Barrel1.visible = false
+		$Wall1.visible = false
+		$Back1.visible = false
+		$Side1.visible = false
+		labpicked = $Chair1
+	elif label == 4:
+		$Barrel1.text = correct_code
+		$Pillar1.visible = false
+		$Chair1.visible = false
+		$Barrel1.visible = false
+		$Wall1.visible = false
+		$Back1.visible = false
+		$Side1.visible = false
+		labpicked = $Barrel1
+	elif label == 5:
+		$Side1.text = correct_code
+		$Pillar1.visible = false
+		$Chair1.visible = false
+		$Barrel1.visible = false
+		$Wall1.visible = false
+		$Back1.visible = false
+		$Side1.visible = false
+		labpicked = $Side1
+	elif label == 6:
+		$Back1.text = correct_code
+		$Pillar1.visible = false
+		$Chair1.visible = false
+		$Barrel1.visible = false
+		$Wall1.visible = false
+		$Back1.visible = false
+		$Side1.visible = false
+		labpicked = $Back1
 func _input(event):
 	if event.is_action_pressed("interact") and Global.keypad == true:
 		$KeyPadZoom.visible = true
@@ -56,12 +89,16 @@ func add_number(num):
 		
 func check_code():   
 	if "".join(code_input.map(str)) == correct_code:
+		$"../CanvasLayer".stop_puzzle()
+		$"../audio/dooropen".play()
 		$"../MainScene".play("door_open2")
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		$KeyPadZoom.visible = false
 		Global.keypad = false
 		Global.can_torch = true
 		$CODEE.visible = false
+		await $"../MainScene".animation_finished
+		$"../audio/dooropen".stop()		
 	else:
 		code_input.clear()
 		$KeyPadZoom/CodeSHow.text =  ""

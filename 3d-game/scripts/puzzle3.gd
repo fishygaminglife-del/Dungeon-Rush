@@ -14,14 +14,12 @@ func _process(delta: float) -> void:
 			$"../TextPlayer/Textbox".visible = false
 			$"../TextPlayer/Name".visible = false
 			$"../TextPlayer/Text".visible = false
+			$"../audio/wall move".play()
+			$"../CanvasLayer".stop_puzzle()
 			$"../MainScene".play("plate_finish")
 			finished = true
-			$"../TextPlayer/Text".text = "Reach the top (complete the obby)"
-			$"../TextPlayer".play("textplay")
 			await $"../MainScene".animation_finished
-			$"../TextPlayer/Textbox".visible = false
-			$"../TextPlayer/Name".visible = false
-			$"../TextPlayer/Text".visible = false
+			$"../audio/wall move".stop()
 			
 func _on_area_3d_2_body_entered(body: Node3D) -> void:
 	if body.is_in_group("barrel") or body.is_in_group("player"):
@@ -58,4 +56,15 @@ func _on_area_3d_3_body_exited(body: Node3D) -> void:
 func _on_close_body_entered(body: Node3D) -> void:
 	if started == 0:
 		$"../MainScene".play("barrel_enter")
+		$"../TextPlayer/Text".text = "Push all the pressure plates down at once (use barrels and you!)"
+		get_tree().get_root().get_node("Node3D/ProtoController").can_move = false
+		get_tree().get_root().get_node("Node3D/ProtoController").velocity = Vector3.ZERO
+		$"../audio/npctalk".play()
+		$"../TextPlayer".play("textplay")
+		await $"../TextPlayer".animation_finished
+		$"../audio/npctalk".stop()
+		$"../CanvasLayer".start_puzzle()
+		$"../TextPlayer/Textbox".visible = false
+		$"../TextPlayer/Name".visible = false
+		$"../TextPlayer/Text".visible = false
 		started = 1

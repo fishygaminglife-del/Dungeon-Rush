@@ -11,10 +11,18 @@ var t_2 = 0
 var t_3 = 0
 var t_4 = 0
 var puz2 = true
+var label = randi_range(1, 2)
 func _ready() -> void:
 	correct_order.shuffle()
 	code_shuffled =  "".join(correct_order.map(str))
-	$CodeWall.text = code_shuffled
+	if label == 1:
+		$CodeWall.text = code_shuffled
+		$CodeWall.visible = true
+		$CodeChair.visible = false
+	elif label == 2:
+		$CodeChair.text = code_shuffled
+		$CodeWall.visible = false
+		$CodeChair.visible = true
 	$StaticBody3D/OmniLight3D2.visible = false
 	$StaticBody3D2/OmniLight3D2.visible = false
 	$StaticBody3D3/OmniLight3D2.visible = false
@@ -51,14 +59,11 @@ func add_number(num):
 	Global.keypad = false
 	if code_input.size() == 4:
 		if code_input == correct_order:
+			$"../CanvasLayer".stop_puzzle()
+			$"../audio/wall move".play()
 			$"../MainScene".play("code_correct")
 			await $"../MainScene".animation_finished
-			$"../TextPlayer/Text".text = "Push all the pressure plates down at once (use barrels and you!)"
-			$"../TextPlayer".play("textplay")
-			await get_tree().create_timer(7).timeout
-			$"../TextPlayer/Textbox".visible = false
-			$"../TextPlayer/Name".visible = false
-			$"../TextPlayer/Text".visible = false
+			$"../audio/wall move".stop()
 		else:
 			$StaticBody3D/OmniLight3D2.visible = false
 			$StaticBody3D2/OmniLight3D2.visible = false
@@ -122,9 +127,14 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player") and puz2:
 			Global.key = false
 			puz2 = false
+			get_tree().get_root().get_node("Node3D/ProtoController").can_move = false
+			get_tree().get_root().get_node("Node3D/ProtoController").velocity = Vector3.ZERO
 			$"../TextPlayer/Text".text = "Find the code in this room, and light torches based on number order."
 			$"../TextPlayer".play("text_play")
-			await $"../TextPlayer".animation_finished			
+			$"../audio/npctalk".play()
+			await $"../TextPlayer".animation_finished
+			$"../CanvasLayer".start_puzzle()	
+			$"../audio/npctalk".stop()	
 			$"../TextPlayer/Textbox".visible = false
 			$"../TextPlayer/Name".visible = false
 			$"../TextPlayer/Text".visible = false 

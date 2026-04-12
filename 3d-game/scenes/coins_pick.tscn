@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://ckwamhai02bnu"]
+
+[ext_resource type="Script" uid="uid://2a1m8h6wemdr" path="res://scripts/coins_pick.gd" id="1_pv0pu"]
+[ext_resource type="PackedScene" uid="uid://dmbuiymvfnj8e" path="res://models/props/coin_stack.glb" id="2_yx4h5"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_6dpvh"]
+height = 0.75
+radius = 0.6
+
+[node name="coins_pick" type="Node3D" unique_id=1023922864]
+script = ExtResource("1_pv0pu")
+
+[node name="coin_stack" parent="." unique_id=571616930 instance=ExtResource("2_yx4h5")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0.1)
+
+[node name="coinbody" type="Area3D" parent="." unique_id=1171518124]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="coinbody" unique_id=570776858]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0.47500002, 0.1)
+shape = SubResource("CylinderShape3D_6dpvh")
+
+[connection signal="body_entered" from="coinbody" to="." method="_on_coinbody_body_entered"]

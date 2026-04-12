@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://btdhvr2c556nu"
+path="res://.godot/imported/wall sliding.mp3-bf776fbe8276777c06c31f140dad2e92.mp3str"
+
+[deps]
+
+source_file="res://audio/wall sliding.mp3"
+dest_files=["res://.godot/imported/wall sliding.mp3-bf776fbe8276777c06c31f140dad2e92.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

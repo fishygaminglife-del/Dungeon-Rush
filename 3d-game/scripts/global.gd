@@ -3,12 +3,13 @@ extends Node
 var keypad = false
 var can_torch = false
 var key = true
+var coins = 0
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+@onready var music = AudioStreamPlayer.new()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _ready():
+	add_child(music)
+	music.process_mode = Node.PROCESS_MODE_ALWAYS
+	music.stream = preload("res://audio/dungeon bg music.mp3")
+	music.stream.loop = true
+	#music.play()

@@ -1,0 +1,286 @@
+[gd_scene format=3 uid="uid://gw568yka8nl"]
+
+[ext_resource type="Script" uid="uid://bnadedy8huuyo" path="res://scripts/active_instructions.gd" id="1_tknh5"]
+[ext_resource type="Texture2D" uid="uid://dknt54475vwx0" path="res://images/Screenshot 2026-04-10 202504.png" id="2_bftqs"]
+[ext_resource type="Texture2D" uid="uid://ci2mflqo1mcsu" path="res://images/Dungeon instructionbox.png" id="3_l0icb"]
+[ext_resource type="FontFile" uid="uid://digym3tk41v25" path="res://fonts/Gelasio-VariableFont_wght.ttf" id="4_v2llq"]
+[ext_resource type="Texture2D" uid="uid://d01r3xlw4ed7" path="res://images/Screenshot 2026-04-10 184731.png" id="5_havgl"]
+[ext_resource type="Texture2D" uid="uid://b8kasluj7kdx0" path="res://images/Screenshot 2026-04-10 215519.png" id="6_rrpqg"]
+
+[sub_resource type="Animation" id="Animation_havgl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label3:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label2:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label4:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_l0icb"]
+resource_name = "textplay_end"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label2:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label3:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label4:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_rrpqg"]
+resource_name = "textplay_start"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label3:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label2:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label4:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rn7js"]
+_data = {
+&"RESET": SubResource("Animation_havgl"),
+&"textplay_end": SubResource("Animation_l0icb"),
+&"textplay_start": SubResource("Animation_rrpqg")
+}
+
+[sub_resource type="Animation" id="Animation_rn7js"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Screenshot20260410215519:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Screenshot20260410184731:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_uytft"]
+resource_name = "imageplay"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Screenshot20260410215519:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Screenshot20260410184731:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7had6"]
+_data = {
+&"RESET": SubResource("Animation_rn7js"),
+&"imageplay": SubResource("Animation_uytft")
+}
+
+[node name="Node2D" type="Node2D" unique_id=357766990]
+script = ExtResource("1_tknh5")
+
+[node name="Screenshot20260410202504" type="Sprite2D" parent="." unique_id=1277943211]
+position = Vector2(576, 324)
+scale = Vector2(1, 1.003096)
+texture = ExtResource("2_bftqs")
+
+[node name="DungeonInstructionbox" type="Sprite2D" parent="." unique_id=863846325]
+position = Vector2(216, 344)
+texture = ExtResource("3_l0icb")
+
+[node name="DungeonInstructionbox2" type="Sprite2D" parent="." unique_id=886073265]
+position = Vector2(576, 344)
+texture = ExtResource("3_l0icb")
+
+[node name="DungeonInstructionbox3" type="Sprite2D" parent="." unique_id=1602706281]
+position = Vector2(936, 344)
+texture = ExtResource("3_l0icb")
+
+[node name="Label2" type="Label" parent="." unique_id=1579712252]
+offset_left = 806.0
+offset_top = 241.0
+offset_right = 1064.0
+offset_bottom = 394.0
+text = "Before each puzzle, a countdown will start, you will not be able to move then. After the countdown, the minigame timer starts, beat the minigame in 15 seconds : 5 coins, 30 seconds : 3 coins, 60 seconds : 1 coin."
+horizontal_alignment = 1
+autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Label3" type="Label" parent="." unique_id=881116954]
+offset_left = 87.0
+offset_top = 241.0
+offset_right = 345.0
+offset_bottom = 454.0
+text = "Pick up coins around the "
+horizontal_alignment = 1
+autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Label4" type="Label" parent="." unique_id=637650135]
+offset_left = 447.0
+offset_top = 241.0
+offset_right = 705.0
+offset_bottom = 454.0
+text = "Use WASD or Arrow keys to move arround. Use Mouse to move your screens POV. Use Spacebar to jump."
+horizontal_alignment = 1
+autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Label" type="Label" parent="." unique_id=924272079]
+offset_top = 29.0
+offset_right = 1152.0
+offset_bottom = 50.0
+theme_override_fonts/font = ExtResource("4_v2llq")
+theme_override_font_sizes/font_size = 28
+text = "INSTRUCTIONS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InstructionPlayer" type="AnimationPlayer" parent="." unique_id=952727895]
+libraries/ = SubResource("AnimationLibrary_rn7js")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1239791485]
+libraries/ = SubResource("AnimationLibrary_7had6")
+
+[node name="Continue" type="Button" parent="." unique_id=963015674]
+offset_left = 490.0
+offset_top = 550.00006
+offset_right = 584.0
+offset_bottom = 579.00006
+scale = Vector2(1.85, 1.85)
+theme_override_fonts/font = ExtResource("4_v2llq")
+text = "CONTINUE"
+
+[node name="Screenshot20260410184731" type="Sprite2D" parent="." unique_id=347922472]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(213, 339.00003)
+scale = Vector2(0.66812867, 0.66812867)
+texture = ExtResource("5_havgl")
+
+[node name="Screenshot20260410215519" type="Sprite2D" parent="." unique_id=1912813857]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(935, 335)
+scale = Vector2(3.5000002, 3.5)
+texture = ExtResource("6_rrpqg")
+
+[connection signal="pressed" from="Continue" to="." method="_on_continue_pressed"]
