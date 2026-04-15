@@ -1,15 +1,16 @@
 [gd_scene format=3 uid="uid://c5f1aecf83v2y"]
 
-[ext_resource type="Texture2D" uid="uid://b0ua3cnhwir5r" path="res://images/Dungeon Rush Cover.png" id="1_7idqh"]
 [ext_resource type="Script" uid="uid://cddxhktjx0g5a" path="res://scripts/homescreen.gd" id="1_ro446"]
+[ext_resource type="Texture2D" uid="uid://cimrn7uu5pc5u" path="res://images/Screenshot 2026-04-14 173646.png" id="2_0667q"]
 [ext_resource type="FontFile" uid="uid://digym3tk41v25" path="res://fonts/Gelasio-VariableFont_wght.ttf" id="2_ro446"]
 
 [node name="homescene" type="Node2D" unique_id=818183245]
 script = ExtResource("1_ro446")
 
-[node name="DungeonRushCover" type="Sprite2D" parent="." unique_id=1618089358]
-position = Vector2(576, 324)
-texture = ExtResource("1_7idqh")
+[node name="Screenshot20260414173646" type="Sprite2D" parent="." unique_id=553219182]
+position = Vector2(575.75, 323.75)
+scale = Vector2(1.0047951, 1.0085536)
+texture = ExtResource("2_0667q")
 
 [node name="Playbut" type="Button" parent="." unique_id=761793012]
 offset_left = 453.0
@@ -37,6 +38,15 @@ offset_bottom = 475.0
 theme_override_fonts/font = ExtResource("2_ro446")
 theme_override_font_sizes/font_size = 24
 text = "CREDIT"
+
+[node name="Label" type="Label" parent="." unique_id=11827365]
+offset_top = 30.0
+offset_right = 886.15393
+offset_bottom = 53.0
+scale = Vector2(1.3, 1.3)
+theme_override_fonts/font = ExtResource("2_ro446")
+text = "Dungeon Rush"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="Playbut" to="." method="_on_playbut_pressed"]
 [connection signal="pressed" from="Instructionsbut" to="." method="_on_instructionsbut_pressed"]

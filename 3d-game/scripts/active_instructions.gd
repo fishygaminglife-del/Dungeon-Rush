@@ -7,7 +7,7 @@ func _ready() -> void:
 	$Screenshot20260410215519.visible = false
 	$Label4.text = "Move with WASD or Arrow Keys | Look around with the Mouse | Jump with Spacebar."
 	$Label3.text = "Collect coins scattered around the map to grow your coin balance!"
-	$Label2.text = "Each puzzle has a timer (top-right corner) — solve it fast to earn more coins!⚡ Under 15s = 5 coins  |  Under 30s = 3 coins  |  Under 60s = 2 coins."
+	$Label2.text = "Each puzzle has a timer (top-right corner) solve it fast to earn more coins! Under 15s = 5 coins  |  Under 30s = 3 coins  |  Under 60s = 2 coins."
 	$InstructionPlayer.play("textplay_start")
 	
 

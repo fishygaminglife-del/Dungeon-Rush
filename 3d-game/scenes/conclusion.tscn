@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://dv3mavyeah0q8"]
+
+[ext_resource type="Texture2D" uid="uid://b0ua3cnhwir5r" path="res://images/Dungeon Rush Cover.png" id="1_rvn27"]
+[ext_resource type="Script" uid="uid://bi7vr1og0m7pp" path="res://scripts/conclusion.gd" id="1_us15w"]
+[ext_resource type="Texture2D" uid="uid://bti6uesga5nma" path="res://images/Untitled.png" id="3_6us56"]
+[ext_resource type="Texture2D" uid="uid://rpd8onkfx6eg" path="res://images/ZombieBG.png" id="4_p1fsq"]
+[ext_resource type="Texture2D" uid="uid://dgh428bgx304q" path="res://images/MageBG.png" id="5_5ont2"]
+[ext_resource type="Texture2D" uid="uid://l17vhojdmuw4" path="res://images/homebutton.png" id="6_5ont2"]
+
+[node name="Node2D" type="Node2D" unique_id=590700157]
+script = ExtResource("1_us15w")
+
+[node name="DungeonRushCover" type="Sprite2D" parent="." unique_id=665251094]
+position = Vector2(576, 324)
+texture = ExtResource("1_rvn27")
+
+[node name="Label" type="Label" parent="." unique_id=1480718731]
+offset_left = 360.0
+offset_top = 174.0
+offset_right = 814.0
+offset_bottom = 197.0
+text = "You beat Dungeon Rush, you met Zombie, and freed Mage."
+
+[node name="Label2" type="Label" parent="." unique_id=470576383]
+offset_left = 216.0
+offset_top = 260.0
+offset_right = 306.0
+offset_bottom = 283.0
+text = "Total Coins"
+
+[node name="Label3" type="Label" parent="." unique_id=970928585]
+offset_left = 216.0
+offset_top = 260.0
+offset_right = 306.0
+offset_bottom = 283.0
+text = "Total Coins:"
+
+[node name="Label4" type="Label" parent="." unique_id=466673074]
+offset_left = 251.0
+offset_top = 304.0
+offset_right = 263.0
+offset_bottom = 332.0
+theme_override_font_sizes/font_size = 20
+text = "2"
+
+[node name="Untitled" type="Sprite2D" parent="." unique_id=2004142876]
+position = Vector2(198, 307)
+texture = ExtResource("3_6us56")
+
+[node name="ZombieBg" type="Sprite2D" parent="." unique_id=1583571538]
+position = Vector2(740.25, 426.2647)
+scale = Vector2(0.879902, 0.87990195)
+texture = ExtResource("4_p1fsq")
+
+[node name="MageBg" type="Sprite2D" parent="." unique_id=1611342473]
+position = Vector2(491, 425)
+texture = ExtResource("5_5ont2")
+
+[node name="Button" type="Button" parent="." unique_id=667795693]
+offset_left = 1082.0
+offset_top = 16.0
+offset_right = 1122.0
+offset_bottom = 56.0
+scale = Vector2(1.35, 1.35)
+icon = ExtResource("6_5ont2")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

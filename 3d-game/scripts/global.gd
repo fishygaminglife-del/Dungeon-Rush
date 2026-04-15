@@ -12,4 +12,4 @@ func _ready():
 	music.process_mode = Node.PROCESS_MODE_ALWAYS
 	music.stream = preload("res://audio/dungeon bg music.mp3")
 	music.stream.loop = true
-	#music.play()
+	music.play()

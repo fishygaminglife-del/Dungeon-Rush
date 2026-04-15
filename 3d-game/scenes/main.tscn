@@ -44,6 +44,8 @@
 [ext_resource type="FontFile" uid="uid://digym3tk41v25" path="res://fonts/Gelasio-VariableFont_wght.ttf" id="38_2cjbq"]
 [ext_resource type="PackedScene" uid="uid://ckwamhai02bnu" path="res://scenes/coins_pick.tscn" id="39_c6pm6"]
 [ext_resource type="Texture2D" uid="uid://bti6uesga5nma" path="res://images/Untitled.png" id="43_chjal"]
+[ext_resource type="PackedScene" uid="uid://bfuv82f5jlhh8" path="res://skeleton/skeleton_mage.glb" id="45_txyw0"]
+[ext_resource type="Script" uid="uid://bpdinacvuvo62" path="res://scripts/skeleton_mage.gd" id="46_vc5cj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_j8jky"]
 
@@ -2974,13 +2976,13 @@ shape = SubResource("CapsuleShape3D_v6jeq")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.3, 8.8, -47)
 
 [node name="StaticBody3D539" parent="Building" unique_id=2102204915 instance=ExtResource("24_qkpxi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1, 10.2, -51.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1, 9.599999, -51.5)
 
 [node name="StaticBody3D540" parent="Building" unique_id=1435290909 instance=ExtResource("22_fv21b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.800001, 11, -51.100002)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.900002, 10.5, -51.100002)
 
 [node name="StaticBody3D629" parent="Building" unique_id=697486454 instance=ExtResource("22_fv21b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.9, 11.3, -51.100002)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5, 10.900001, -51.100002)
 
 [node name="StaticBody3D514" parent="Building" unique_id=444042345 instance=ExtResource("10_ya4ey")]
 transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 14.4, 8.099999, -27.5)
@@ -3285,10 +3287,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2000003, 0.2, -14.3)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.2, -28)
 
 [node name="StaticBody3D529" parent="Building" unique_id=2134859273 instance=ExtResource("16_jscy8")]
-transform = Transform3D(-7.590403e-09, -1, 4.3047315e-08, 0.7660444, -3.3484866e-08, -0.64278764, 0.64278764, 2.809714e-08, 0.7660444, 27.199997, 13.2, -51.2)
+transform = Transform3D(-7.590403e-09, -1, 4.3047315e-08, 0.7660444, -3.3484866e-08, -0.64278764, 0.64278764, 2.809714e-08, 0.7660444, 27.199997, 12.5, -51.2)
 
 [node name="StaticBody3D531" parent="Building" unique_id=518950026 instance=ExtResource("25_5q0nq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.100002, 14.900001, -51.2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.100002, 14, -51.2)
 
 [node name="StaticBody3D583" parent="Building" unique_id=326508505 instance=ExtResource("7_tipki")]
 transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 39.2, 15.5, -46.8)
@@ -3435,7 +3437,7 @@ transform = Transform3D(-0.8660254, 0, -0.50000006, 0, 1, 0, 0.50000006, 0, -0.8
 transform = Transform3D(-0.64278764, 0, -0.76604444, 0, 1, 0, 0.76604444, 0, -0.64278764, 63.500008, 8.3, -3)
 
 [node name="StaticBody3D530" parent="Building" unique_id=1772798412 instance=ExtResource("15_jkv2x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.300003, 13.400001, -51.600002)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.800003, 12.800001, -51.600002)
 
 [node name="StaticBody3D637" parent="Building" unique_id=768759219 instance=ExtResource("2_sugp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.400002, 8, -9.1)
@@ -4706,7 +4708,7 @@ outline_size = 67
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.9, 8.3, -23.4)
 
 [node name="coins_pick2" parent="CoinsPickUp" unique_id=826296238 instance=ExtResource("39_c6pm6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.800001, 12.4, -51)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.6, 11.9, -51)
 
 [node name="coins_pick13" parent="CoinsPickUp" unique_id=677992612 instance=ExtResource("39_c6pm6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.299995, 8.3, -20.2)
@@ -4753,10 +4755,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.1, 1.1, 9.8)
 [node name="Node" type="Node" parent="." unique_id=1016671705]
 
 [node name="Untitled" type="Sprite2D" parent="." unique_id=1109442851]
+visible = false
 position = Vector2(64, 53)
 texture = ExtResource("43_chjal")
 
 [node name="Label" type="Label" parent="." unique_id=454100673]
+visible = false
 offset_left = 39.0
 offset_top = 40.0
 offset_right = 74.0
@@ -4766,6 +4770,10 @@ theme_override_font_sizes/font_size = 30
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="skeleton_mage" parent="." unique_id=610218773 instance=ExtResource("45_txyw0")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 76.200005, 8.1, -11.900001)
+script = ExtResource("46_vc5cj")
 
 [connection signal="pressed" from="puzzle1/KeyPadZoom/Close" to="puzzle1" method="_on_close_pressed"]
 [connection signal="pressed" from="puzzle1/KeyPadZoom/Check3" to="puzzle1" method="_on_check_pressed"]

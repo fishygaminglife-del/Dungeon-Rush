@@ -3,7 +3,7 @@ extends Node3D
 var can_interact = false
 var counts = 0
 func _ready() -> void:
-	#total coins user can get is 41
+	#total coins user can get is 42
 	$ProtoController.position = Vector3(-5.97, 0.56, 16.45)
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	$puzzle1/CODEE.visible = false
@@ -130,6 +130,7 @@ func _on_maze_talk_body_entered(body: Node3D) -> void:
 	$CanvasLayer.start_puzzle()
 
 func _on_end_talk_body_entered(body: Node3D) -> void:
+	$EndTalk.monitorable = false
 	$CanvasLayer.stop_puzzle()
 	$TextPlayer/Name.text = "Malgosha"
 	$TextPlayer/Text.text = "Wow, you found me. I have been so lost, and now you saved me! "
