@@ -13,7 +13,6 @@ config_version=5
 config/name="3d Game"
 run/main_scene="uid://c5f1aecf83v2y"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-boot_splash/image="uid://diqm0ap60604l"
 config/icon="res://icon.svg"
 
 [autoload]

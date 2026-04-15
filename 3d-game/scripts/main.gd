@@ -4,6 +4,9 @@ var can_interact = false
 var counts = 0
 func _ready() -> void:
 	#total coins user can get is 42
+	$TextPlayer/Textbox.visible = false
+	$TextPlayer/Name.visible = false
+	$TextPlayer/Text.visible = false
 	$ProtoController.position = Vector3(-5.97, 0.56, 16.45)
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	$puzzle1/CODEE.visible = false
@@ -106,6 +109,7 @@ func _on_area_3_dend_body_entered(body: Node3D) -> void:
 
 
 func _on_obbyenter_body_entered(body: Node3D) -> void:
+	$obby/obbyenter.monitorable = false 
 	$MainScene.play("obby_show")
 	$TextPlayer/Text.text = "Reach the top (complete the obby)"
 	$TextPlayer.play("textplay")
@@ -120,6 +124,7 @@ func _on_obbyenter_body_entered(body: Node3D) -> void:
 
 
 func _on_maze_talk_body_entered(body: Node3D) -> void:
+	$MazeTalk.monitorable = false
 	get_tree().get_root().get_node("Node3D/ProtoController").can_move = false
 	get_tree().get_root().get_node("Node3D/ProtoController").velocity = Vector3.ZERO
 	$TextPlayer/Text.text = "You thought that was the end, find the exit of the maze."

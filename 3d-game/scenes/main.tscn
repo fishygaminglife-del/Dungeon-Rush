@@ -4755,12 +4755,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.1, 1.1, 9.8)
 [node name="Node" type="Node" parent="." unique_id=1016671705]
 
 [node name="Untitled" type="Sprite2D" parent="." unique_id=1109442851]
-visible = false
 position = Vector2(64, 53)
 texture = ExtResource("43_chjal")
 
 [node name="Label" type="Label" parent="." unique_id=454100673]
-visible = false
 offset_left = 39.0
 offset_top = 40.0
 offset_right = 74.0
