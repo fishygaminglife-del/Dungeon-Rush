@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://cddxhktjx0g5a" path="res://scripts/homescreen.gd" id="1_ro446"]
 [ext_resource type="Texture2D" uid="uid://cimrn7uu5pc5u" path="res://images/Screenshot 2026-04-14 173646.png" id="2_0667q"]
 [ext_resource type="FontFile" uid="uid://digym3tk41v25" path="res://fonts/Gelasio-VariableFont_wght.ttf" id="2_ro446"]
+[ext_resource type="Texture2D" uid="uid://dvuusukvvtw3k" path="res://images/VolumeOff.png" id="4_v5pf5"]
+[ext_resource type="Texture2D" uid="uid://d0fspj7jahc4l" path="res://images/VolumeOn.png" id="5_2wg5m"]
 
 [node name="homescene" type="Node2D" unique_id=818183245]
 script = ExtResource("1_ro446")
@@ -53,6 +55,22 @@ theme_override_font_sizes/font_size = 48
 text = "Dungeon Rush"
 horizontal_alignment = 1
 
+[node name="Button" type="Button" parent="." unique_id=694343373]
+offset_left = 1042.0
+offset_top = 27.0
+offset_right = 1093.0
+offset_bottom = 78.0
+icon = ExtResource("4_v5pf5")
+
+[node name="Button2" type="Button" parent="." unique_id=129960185]
+offset_left = 1042.0
+offset_top = 27.0
+offset_right = 1102.0
+offset_bottom = 78.0
+icon = ExtResource("5_2wg5m")
+
 [connection signal="pressed" from="Playbut" to="." method="_on_playbut_pressed"]
 [connection signal="pressed" from="Instructionsbut" to="." method="_on_instructionsbut_pressed"]
 [connection signal="pressed" from="Creditbut" to="." method="_on_creditbut_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

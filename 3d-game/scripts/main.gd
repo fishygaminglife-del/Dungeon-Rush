@@ -2,6 +2,9 @@ extends Node3D
 
 var can_interact = false
 var counts = 0
+var playable = true
+var plaing = true
+var maze = true
 func _ready() -> void:
 	#total coins user can get is 42
 	$TextPlayer/Textbox.visible = false
@@ -98,7 +101,7 @@ func _on_obby_3_darea_body_entered(body: Node3D) -> void:
 
 func _on_area_3_dend_body_entered(body: Node3D) -> void:
 	$CanvasLayer.stop_puzzle()
-	$TextPlayer/Text.text = "Wow, you found me, you can leave (esc) or continue!"
+	$TextPlayer/Text.text = "Wow, you found me, but you're not done..."
 	$TextPlayer.play("textplay")
 	$audio/npctalk.play()
 	await $TextPlayer.animation_finished
@@ -109,38 +112,47 @@ func _on_area_3_dend_body_entered(body: Node3D) -> void:
 
 
 func _on_obbyenter_body_entered(body: Node3D) -> void:
-	$obby/obbyenter.monitorable = false 
-	$MainScene.play("obby_show")
-	$TextPlayer/Text.text = "Reach the top (complete the obby)"
-	$TextPlayer.play("textplay")
-	$audio/npctalk.play()
-	await $TextPlayer.animation_finished
-	$"audio/npctalk".stop()
-	$"TextPlayer/Textbox".visible = false
-	$"TextPlayer/Name".visible = false
-	$"TextPlayer/Text".visible = false
-	await $MainScene.animation_finished
-	$CanvasLayer.start_puzzle()
+	if plaing:
+		plaing = false	
+		$obby/obbyenter.monitorable = false 
+		$MainScene.play("obby_show")
+		$TextPlayer/Text.text = "Reach the top (complete the obby)"
+		$TextPlayer.play("textplay")
+		$audio/npctalk.play()
+		await $TextPlayer.animation_finished
+		$"audio/npctalk".stop()
+		$"TextPlayer/Textbox".visible = false
+		$"TextPlayer/Name".visible = false
+		$"TextPlayer/Text".visible = false
+		await $MainScene.animation_finished
+		$CanvasLayer.start_puzzle()
 
 
 func _on_maze_talk_body_entered(body: Node3D) -> void:
-	$MazeTalk.monitorable = false
-	get_tree().get_root().get_node("Node3D/ProtoController").can_move = false
-	get_tree().get_root().get_node("Node3D/ProtoController").velocity = Vector3.ZERO
-	$TextPlayer/Text.text = "You thought that was the end, find the exit of the maze."
-	$TextPlayer.play("textplay")
-	$audio/npctalk.play()
-	await $TextPlayer.animation_finished
-	$audio/npctalk.stop()
-	$CanvasLayer.start_puzzle()
+	if maze:
+		maze = false
+		get_tree().get_root().get_node("Node3D/ProtoController").can_move = false
+		get_tree().get_root().get_node("Node3D/ProtoController").velocity = Vector3.ZERO
+		$TextPlayer/Text.text = "Find the exit of the maze to advance."
+		$TextPlayer.play("textplay")
+		$audio/npctalk.play()
+		await $TextPlayer.animation_finished
+		$TextPlayer/Name.visible = false
+		$TextPlayer/Textbox.visible = false
+		$TextPlayer/Text.visible = false
+		$audio/npctalk.stop()
+		$CanvasLayer.start_puzzle()
 
 func _on_end_talk_body_entered(body: Node3D) -> void:
-	$EndTalk.monitorable = false
-	$CanvasLayer.stop_puzzle()
-	$TextPlayer/Name.text = "Malgosha"
-	$TextPlayer/Text.text = "Wow, you found me. I have been so lost, and now you saved me! "
-	$TextPlayer.play("textplay")
-	await $TextPlayer.animation_finished
-	$TextPlayer/Textbox.visible = false
-	$TextPlayer/Name.visible = false
-	$TextPlayer/Text.visible = false
+	if playable:
+		playable = false
+		$EndTalk.monitorable = false
+		$CanvasLayer.stop_puzzle()
+		$TextPlayer/Name.text = "Malgosha"
+		$TextPlayer/Text.text = "Wow, you found me. I have been so lost, and now you saved me! "
+		$TextPlayer.play("textplay")
+		await $TextPlayer.animation_finished
+		get_tree().change_scene_to_file("res://scenes/conclusion.tscn")
+		$TextPlayer/Textbox.visible = false
+		$TextPlayer/Name.visible = false
+		$TextPlayer/Text.visible = false

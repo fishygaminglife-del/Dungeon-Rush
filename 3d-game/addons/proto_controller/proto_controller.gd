@@ -52,6 +52,7 @@ var freeflying : bool = false
 
 func _ready() -> void:
 	check_input_mappings()
+	freeflying = false
 	look_rotation.y = rotation.y
 	look_rotation.x = head.rotation.x
 

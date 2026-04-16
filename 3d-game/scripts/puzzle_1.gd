@@ -89,6 +89,12 @@ func add_number(num):
 		
 func check_code():   
 	if "".join(code_input.map(str)) == correct_code:
+		$Pillar1.visible = false
+		$Chair1.visible = false
+		$Barrel1.visible = false
+		$Wall1.visible = false
+		$Back1.visible = false
+		$Side1.visible = false
 		$"../CanvasLayer".stop_puzzle()
 		$"../audio/dooropen".play()
 		$"../MainScene".play("door_open2")
